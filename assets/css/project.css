@@ -1,0 +1,34 @@
+#bodyy {
+	font-family: roboto;
+	font-size: 17px;
+}
+.container-fluid {
+    background-color: lightblue;
+}
+.table {
+	border: 1px solid lightgrey;
+	padding: 5px;
+	align-items: center;
+}
+.cls_style {
+	border: 1px solid lightgrey;
+	padding: 5px;
+}
+.table thead {
+    background-color: #f5f5f5;
+}
+td {
+    width: 33.33%;
+    text-align: center;
+}
+.table thead tr th {
+	width: 33.33%;
+    text-align: center;	
+}
+.hr_line {
+	margin-top: 0;
+	border: 1px solid darkblue;
+}
+.formclass {
+	margin:	200px;
+}
