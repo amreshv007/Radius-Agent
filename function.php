@@ -28,7 +28,8 @@ function filter_url($url){
 	return $url;
 }
 
-function find_open_issues($html){
+function find_open_issues($url){
+	$html = file_get_html($url);
 	$dom = new DOMDocument();
 	@$dom->loadHTML($html);
 	$nodes = $dom->getElementsByTagName('a');
@@ -43,11 +44,27 @@ function find_open_issues($html){
 	$open = (string)$open_issues;
 	$open = explode(" Open",$open);
 	$open_issues = $open[0];
+	if($open_issues == "create an issue"){
+		$open_issues = 0;
+	}
 	echo $open_issues."<br>";
 	return $open_issues;
 }
 
+function find_issues_openned_within_24hrs($url){
+	$page_url = $url;
+	$html = file_get_html($page_url);
 
+	foreach($html->find('relative-time') as $element) 
+       echo $element->datetime. '<br>';
+	
+	
+	echo $url."<br>";
+	
+	$issues = "";
+	
+	return $issues;
+}
 
 
 
