@@ -1,6 +1,6 @@
 <?php
 function filter_url($url){
-	echo $url."<br>";
+	// echo $url."<br>";
 	$j = 0;
 	for($i=0;$i<strlen($url);$i++){
 		if($url[$i]=='?'){
@@ -16,7 +16,7 @@ function filter_url($url){
 		$last = $last - 1;
 	}
 	$url = substr($url,0,$last+1);
-	echo $url."<br>";
+	// echo $url."<br>";
 	$l = strlen($url) - 1;
 	if($url[$l] == '/'){
 		$url = $url."issues";
@@ -24,7 +24,7 @@ function filter_url($url){
 	else{
 		$url = $url."/issues";
 	}
-	echo $url."<br>";
+	// echo $url."<br>";
 	return $url;
 }
 
@@ -58,7 +58,7 @@ function find_open_issues($url){
 		}
 		$open_issues = (int)$r;
 	}
-	echo $open_issues."<br>";
+	// echo $open_issues."<br>";
 	return $open_issues;
 }
 
@@ -113,7 +113,7 @@ function find_issues_openned_periodically($url){
 		else{
 			$j = $i+1;
 			$page_url = $url."?page=$j";
-			echo $page_url."<br>";
+			// echo $page_url."<br>";
 			$count = find_elapsed_days_page_wise($page_url);	
 		}
 		$r = explode(" ", $count);
@@ -122,8 +122,8 @@ function find_issues_openned_periodically($url){
 		$i++;
 	}
 	
-	echo $url."<br>";
-	echo "count1 = ".$count1." count2=".$count2."<br>";
+	// echo $url."<br>";
+	// echo "count1 = ".$count1." count2=".$count2."<br>";
 
 	$issues = $count1." ".$count2;
 	

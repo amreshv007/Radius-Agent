@@ -1,34 +1,35 @@
-#bodyy {
+body{
+	font-size: 20px;
+	background-color: #31708f;
 	font-family: roboto;
-	font-size: 17px;
 }
-.container-fluid {
-    background-color: lightblue;
-}
-.table {
-	border: 1px solid lightgrey;
-	padding: 5px;
-	align-items: center;
-}
-.cls_style {
-	border: 1px solid lightgrey;
-	padding: 5px;
-}
-.table thead {
-    background-color: #f5f5f5;
-}
-td {
-    width: 33.33%;
+h1.heading{
+	padding: 30px 100px 150px 100px;
+	font-weight: 700;
+    font-size: 50px;
+    color: #f2dede;
     text-align: center;
 }
-.table thead tr th {
-	width: 33.33%;
-    text-align: center;	
+h1.heading2{
+	padding: 30px 100px 50px 100px;
 }
-.hr_line {
-	margin-top: 0;
-	border: 1px solid darkblue;
+p{
+	color: #f2dede;
 }
-.formclass {
-	margin:	200px;
+form{
+	margin-top: 10px;
+	text-align: center;
+}
+.form_heading{
+	color: wheat;
+}
+.git_url{
+	padding-left: 5px;
+}
+.table_head{
+	background-color: #263b4c;
+	color: #fcf8e3;
+}
+b{
+	color: #272829;
 }
