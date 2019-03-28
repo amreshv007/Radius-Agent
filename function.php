@@ -34,8 +34,10 @@ function find_open_issues($url){
 	$nodes = $dom->getElementsByTagName('a');       // object stored elements of every Anchor Tag
 	$i = 1;
 	foreach ($nodes as $node) {
-		if($i == 53){                              // condition to find value of total open issues
-			$open_issues = $node->nodeValue;        // store total open issues value
+		$open_issues = $node->nodeValue;
+		// condition to find value of total open issues
+		if(strpos($open_issues, ' Open') !== false){
+			break;
 		}
 		$i++;
 	}
