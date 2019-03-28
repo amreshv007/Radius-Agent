@@ -103,7 +103,7 @@ function find_issues_openned_periodically($url){
 	$count2 = 0;
 	$i = 0;
 	$page_url = "";
-	while($i<20){
+	while($i<15){
 		if($i == 0){
 			$count = find_elapsed_days_page_wise($url);
 		}
