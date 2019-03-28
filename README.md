@@ -10,4 +10,5 @@
 <p><b>Possible improvements on getting more time:</b><br>
 1. UI can be designed more better than this.<br>
 2. We can also find issues openned within a month.<br>
+3. We can reduce page loading time which is due to fetching html code from many pages of openned issues.
 </p>
