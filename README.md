@@ -1,2 +1,7 @@
 # Radius-Agent
-Scraping the data from public GitHub Repository by taking URL of public GitHub Repository as input and Showing Details like Total Open issues, open issues opened in last 24 Hours etc.
+<p>Scraping the data from GitHub Public Repository by taking URL of public GitHub Repository as input.</p>
+<b>Showing following Details:</b><br>
+1. Total Number of open issues.<br>
+2. Number of open issues that were opened in the last 24 hours.<br>
+3. Number of open issues that were opened more than 24 hours ago but less than 7 days ago.<br>
+4. Number of open issues that were opened more than 7 days ago.<br><br>
