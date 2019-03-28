@@ -1,53 +1,51 @@
 <?php
-function filter_url($url){
-	// echo $url."<br>";
+// filtering input URL by removing query part(if there is any) and adding "/issues"
+function filter_url($url){ 
 	$j = 0;
-	for($i=0;$i<strlen($url);$i++){
+	for($i=0;$i<strlen($url);$i++){        // check if there is any "?"(query sign)
 		if($url[$i]=='?'){
 			$j = $i;
 			break;
 		}
 	}
 	if($url[$j]=='?'){
-		$url = substr($url,0,$j);
+		$url = substr($url,0,$j);          // Removing query part from the input url
 	}
 	$last = strlen($url) - 1;
-	while ($url[$last] == '/' ) {
+	while ($url[$last] == '/' ) {         // find index of /(slash) after pure url of gitHub repository
 		$last = $last - 1;
 	}
-	$url = substr($url,0,$last+1);
-	// echo $url."<br>";
+	$url = substr($url,0,$last+1);       // Removing every "/" in the last of the pure url of gitHub repository
 	$l = strlen($url) - 1;
 	if($url[$l] == '/'){
-		$url = $url."issues";
+		$url = $url."issues";             // concatenate "issues" to get open issues URL
 	}
 	else{
-		$url = $url."/issues";
+		$url = $url."/issues";              //concatenate "/issues" to get open issues URL
 	}
-	// echo $url."<br>";
 	return $url;
 }
 
+// Calculating total number of open issues
 function find_open_issues($url){
-	$html = file_get_html($url);
-	$dom = new DOMDocument();
-	@$dom->loadHTML($html);
-	$nodes = $dom->getElementsByTagName('a');
+	$html = file_get_html($url);                   // fetch html code from the URL
+	$dom = new DOMDocument();                      // DOM Oblect
+	@$dom->loadHTML($html);                         // Loading HTML
+	$nodes = $dom->getElementsByTagName('a');       // object stored elements of every Anchor Tag
 	$i = 1;
 	foreach ($nodes as $node) {
-		// echo $i." ".$node->nodeValue."<br>";
-		if($i == 53){
-			$open_issues = $node->nodeValue;
+		if($i == 53){                              // condition to find value of total open issues
+			$open_issues = $node->nodeValue;        // store total open issues value
 		}
 		$i++;
 	}
 	$open = (string)$open_issues;
 	$open = explode(" Open",$open);
 	$open_issues = $open[0];
-	if($open_issues == "create an issue"){
+	if($open_issues == "create an issue"){            // if there is 0 issues openned
 		$open_issues = 0;
 	}
-	else{
+	else{                                            // Get the int value from string value of total open issues
 		$r = "";
 		$i = 0;
 		while($i<strlen($open_issues)){
@@ -58,10 +56,10 @@ function find_open_issues($url){
 		}
 		$open_issues = (int)$r;
 	}
-	// echo $open_issues."<br>";
 	return $open_issues;
 }
 
+// Explode only days from datetime format
 function find_elapsed_days($elapsed){
 	$after = explode(" days", $elapsed);
 	$d = $after[0];
@@ -69,41 +67,38 @@ function find_elapsed_days($elapsed){
 	return $days;
 }
 
+// Calculate number of openned issues of within 24 hours and between 24 hours and 7 days FOR every page URL 
 function find_elapsed_days_page_wise($page_url){
 	$html = file_get_html($page_url);
 	$curr_date = date("Y-m-d H:i:s");
-	$tz = new DateTimeZone('Asia/Kolkata');
+	$tz = new DateTimeZone('Asia/Kolkata');                // Set time zone of india
 	$count1 = 0;
 	$count2 = 0;
 	foreach($html->find('relative-time') as $element){
 		$utc = $element->datetime;
-		$dt = new DateTime($utc);
-       	$dt->setTimezone($tz);
-		// echo $dt->format('Y-m-d H:i:s')."<br>".$curr_date."<br>";
-		$date = $dt->format('Y-m-d H:i:s');
-		$datetime1 = new DateTime();
-		$datetime2 = new DateTime($date);
-		$interval = $datetime1->diff($datetime2);
-		$elapsed = $interval->format('%a days');
-		$days = find_elapsed_days($elapsed);
+		$dt = new DateTime($utc); 
+       	$dt->setTimezone($tz);                             // convert UTC to Indian time zone
+		$date = $dt->format('Y-m-d H:i:s');                  // Set a time format
+		$datetime1 = new DateTime();                        // current date and time
+		$datetime2 = new DateTime($date);                      // openned issues' time and date
+		$interval = $datetime1->diff($datetime2);           // find difference of to time and date
+		$elapsed = $interval->format('%a days');              // set format of difference
+		$days = find_elapsed_days($elapsed);                 // get days in integer
 		
-		if($days<=0){
-			// echo "Issues openned within 24 Hours!<br>";
+		if($days<=0){                                        // Issues openned within 24 Hours
 			$count1 = $count1 + 1;
 		}
-		if($days<7 && $days>0){
-			// echo "Issues openned within 1 week!<br>";
+		if($days<7 && $days>0){                            // Issues openned within 1 week and after 24 hours
 			$count2 = $count2 + 1;
 		}
-		// echo $elapsed."<br><br>";
 	}
 	return $count1." ".$count2;
 }
 
+// function to count issues of every page url by 24 hours and 1 week
 function find_issues_openned_periodically($url){
 	$count1 = 0;
 	$count2 = 0;
-	$count3 = 0;
 	$i = 0;
 	$page_url = "";
 	while($i<9){
@@ -113,23 +108,14 @@ function find_issues_openned_periodically($url){
 		else{
 			$j = $i+1;
 			$page_url = $url."?page=$j";
-			// echo $page_url."<br>";
-			$count = find_elapsed_days_page_wise($page_url);	
+			$count = find_elapsed_days_page_wise($page_url);
 		}
 		$r = explode(" ", $count);
-		$count1 = $count1 + $r[0];
-		$count2 = $count2 + $r[1];
+		$count1 = $count1 + $r[0];                          // sum total openned issues within 1 day of every page
+		$count2 = $count2 + $r[1];              // sum total openned issues between 1 day and 7 day of every page 
 		$i++;
 	}
-	
-	// echo $url."<br>";
-	// echo "count1 = ".$count1." count2=".$count2."<br>";
-
 	$issues = $count1." ".$count2;
-	
 	return $issues;
 }
-
-
-
 ?>
