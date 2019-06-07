@@ -1,4 +1,4 @@
-# Radius-Agent
+# Data Scraping
 <p>Scraping the data from GitHub Public Repository by taking URL of public GitHub Repository as input.</p>
 <b>Showing following Details:</b><br>
 1. Total Number of open issues.<br>
