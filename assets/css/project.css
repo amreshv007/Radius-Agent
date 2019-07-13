@@ -33,3 +33,20 @@ form{
 b{
 	color: #272829;
 }
+.foot{
+	position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #484646;
+   text-align: left;
+}
+.mypic{
+	width: 120px;
+	height: auto;
+}
+.f{
+	color: #f2dede;
+	margin-bottom: auto;
+	font-size: 16px;
+}
