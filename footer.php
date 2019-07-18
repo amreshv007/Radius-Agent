@@ -1,4 +1,4 @@
-		<div class="foot">
+<!-- 		<div class="foot">
 			<div class="col-sm-2">
 				<img alt="" class="mypic" src="https://avatars0.githubusercontent.com/u/25303014?s=460&amp;v=4">
 			</div>
@@ -9,6 +9,6 @@
 				<p class="f">+91-8318852484</p>
 			</div>
 			
-		</div>
+		</div> -->
 	</body>
 </html>
