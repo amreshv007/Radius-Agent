@@ -16,12 +16,20 @@ function get_string_between($string, $start, $end){
     return substr($string, $ini, $len);
 }
 $get_element = get_string_between($html,'<!--','-->');
-$get_element1 = get_string_between($html,'<info','</info>');
-$r = explode("</info>", $html);
-$get_element2 = get_string_between($r[1],'<info','</info>');
-print_r($get_element);
-print_r($get_element1);
-print_r($get_element2);
+for(int i=0;i<15;i++){
+	$get_element1 = get_string_between($html,'<info','</info>');
+	print_r($get_element1);
+	$r = explode("</info>", $html);
+	$html = $r[1];
+// 	$get_element2 = get_string_between($r[1],'<info','</info>');
+	
+}
+// $get_element1 = get_string_between($html,'<info','</info>');
+// $r = explode("</info>", $html);
+// $get_element2 = get_string_between($r[1],'<info','</info>');
+// print_r($get_element);
+// print_r($get_element1);
+// print_r($get_element2);
 // xml task (END)
 
 $url = $_GET['url'];
