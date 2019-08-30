@@ -6,7 +6,7 @@ include 'function.php';
 
 // xml task (START)
 $html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
-print_r("Start"+$html+"End");
+print_r($html);
 function get_string_between($string, $start, $end){
     $string = ' ' . $string;
     $ini = strpos($string, $start);
