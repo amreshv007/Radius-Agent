@@ -71,10 +71,10 @@ for( $i=0; $i < sizeof($arr)-1; $i++){
 		</tr>
 	</thead>
 	<tbody>
-		<?php for($i=0;$i<sifeof($arr);$i++){ ?>
+		<?php for( $i=0; $i < sizeof($arr)-1; $i++){ ?>
 		<tr class="info">
 			<td><?php echo $i+1; ?></td>
-			<?php for($j=0;$j<8;$j++){ ?>
+			<?php for( $j=0; $j<8; $j++) { ?>
 			<td><?php echo $table[$i][$j]; ?></td>
 			<?php } ?>
 		</tr>      
