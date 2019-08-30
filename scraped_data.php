@@ -55,10 +55,35 @@ for( $i=0; $i < sizeof($arr)-1; $i++){
 	}
 	echo "</br>";
 }
-
+?>
+<table class="table">
+	<thead>
+		<tr class="table_head">
+			<th>S. No.</th>
+			<th>Country</th>
+			<th>Operator</th>
+			<th>mcc</th>
+			<th>mnc</th>
+			<th>Volte</th>
+			<th>Vilte</th>
+			<th>Vowifi</th>
+			<th>Viwifi</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php for($i=0;$i<sifeof($arr);$i++){ ?>
+		<tr class="info">
+			<td><?php echo $i+1; ?></td>
+			<?php for($j=0;$j<8;$j++){ ?>
+			<td><?php echo $table[$i][$j]; ?></td>
+			<?php } ?>
+		</tr>      
+		<?php } ?>
+	</tbody>
+</table>
 // xml task (END)
 
-
+<?php
 $url = $_GET['url'];
 $url = filter_url($url);  // filter URL
 $open_issues = find_open_issues($url); // Calculate total open issues
