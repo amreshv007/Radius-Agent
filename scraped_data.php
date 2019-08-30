@@ -46,7 +46,7 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 	$table[$i][6] = $vowifi;
 	$table[$i][7] = $viwifi;
 }
-print_r($table);
+// print_r($table);
 for($i=0;$i = sizeof($arr);$i++){
 	echo "Country     Operator     mcc     mnc     volte     vilte     vowifi     viwifi       </br>";
 	for($j=0;$j<8;$j++){
