@@ -5,7 +5,7 @@ include_once 'simple_html_dom.php';
 include 'function.php';
 
 // xml task (START)
-$html = file_get_html('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
+$html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
 print_r($html);
 // xml task (END)
 
