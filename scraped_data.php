@@ -16,6 +16,7 @@ function get_string_between($string, $start, $end){
     return substr($string, $ini, $len);
 }
 $get_element = get_string_between($html,'<!--','-->');
+$get_element = get_string_between($html,'<info ','</info>');
 print_r($get_element);
 // xml task (END)
 
