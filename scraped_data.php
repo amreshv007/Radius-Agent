@@ -17,7 +17,8 @@ function get_string_between($string, $start, $end){
 }
 $get_element = get_string_between($html,'<!--','-->');
 $get_element1 = get_string_between($html,'<info','</info>');
-$get_element2 = get_string_between($html,'<info','</info>');
+$r = explode("</info>", $html);
+$get_element2 = get_string_between($r[1],'<info','</info>');
 print_r($get_element);
 print_r($get_element1);
 print_r($get_element2);
