@@ -18,11 +18,11 @@ function get_string_between($string, $start, $end){
 }
 // $get_element = get_string_between($html,'<!--','-->');
 $arr = explode('</info>', $html);
-print_r($arr);
-$get_element = get_string_between($arr[0],'<info','</info>');
-print_r($get_element);
-for( $i = 1; $i < sizeof($arr); $i++ ){
-	echo $arr[$i];
+// print_r($arr);
+$first = explode('<info', $arr[0]);
+echo "0. ".$first[1]);
+for( $i = 1; $i < sizeof($arr)-1; $i++ ){
+	echo $i.". ".$arr[$i];
 }
 
 
