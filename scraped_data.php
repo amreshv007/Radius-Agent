@@ -20,7 +20,7 @@ function get_string_between($string, $start, $end){
 $arr = explode('</info>', $html);
 // print_r($arr);
 $first = explode('<info', $arr[0]);
-echo "0. ".$first[1]);
+echo "0. ".$first[1];
 for( $i = 1; $i < sizeof($arr)-1; $i++ ){
 	echo $i.". ".$arr[$i];
 }
