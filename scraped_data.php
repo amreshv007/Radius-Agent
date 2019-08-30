@@ -46,15 +46,6 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 	$table[$i][6] = $vowifi;
 	$table[$i][7] = $viwifi;
 }
-// print_r($table);
-echo "Country     Operator     mcc     mnc     volte     vilte     vowifi     viwifi       ";
-echo "</br>";
-for( $i=0; $i < sizeof($arr)-1; $i++){
-	for($j=0;$j<8;$j++){
-		echo $table[$i][$j]."       ";	
-	}
-	echo "</br>";
-}
 ?>
 <table class="table">
 	<thead>
@@ -81,7 +72,7 @@ for( $i=0; $i < sizeof($arr)-1; $i++){
 		<?php } ?>
 	</tbody>
 </table>
-// xml task (END)
+<!-- xml task (END) -->
 
 <?php
 $url = $_GET['url'];
