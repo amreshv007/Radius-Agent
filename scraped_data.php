@@ -21,7 +21,7 @@ $arr = explode('</info>', $html);
 print_r($arr);
 $get_element = get_string_between($arr[0],'<info','</info>');
 print_r($get_element);
-for( $i = 1; $i < strlen($arr); $i++ ){
+for( $i = 1; $i < sizeof($arr); $i++ ){
 	echo $arr[$i];
 }
 
