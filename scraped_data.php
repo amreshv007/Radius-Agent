@@ -20,12 +20,33 @@ function get_string_between($string, $start, $end){
 $arr = explode('</info>', $html);
 // print_r($arr);
 $first = explode('<info', $arr[0]);
-$arr[0] = "<info ".$first[1];
+$arr[0] = "<info".$first[1];
 // echo "0. ".$first[1];
+$table = array();
 for( $i = 0; $i < sizeof($arr)-1; $i++ ){
-	echo $i.". ".$arr[$i];
+// 	echo $i.". ".$arr[$i];
+	$temp = $arr[$i];
+	// each row extraction
+	$operator_country = get_string_between($temp,'<!--','-->');
+	$a = explode(" ", $operator_country);
+	$operator = $a[0];
+	$country = $a[1];
+	$mcc = get_string_between($temp,'mcc="','" mnc');
+	$mnc = get_string_between($temp,'mnc="','">');
+	$volte = get_string_between($temp,'support_volte="','" support_vilte');
+	$vilte = get_string_between($temp,'support_vilte="','" support_vowifi');
+	$vowifi = get_string_between($temp,'support_vowifi="','" support_viwifi');
+	$viwifi = get_string_between($temp,'support_viwifi="','" />');
+	$table[$i][0] = $country;
+	$table[$i][1] = $operator;
+	$table[$i][2] = $mcc;
+	$table[$i][3] = $mnc;
+	$table[$i][4] = $volte;
+	$table[$i][5] = $vilte;
+	$table[$i][6] = $vowifi;
+	$table[$i][7] = $viwifi;
 }
-
+print_r($table);
 
 // xml task (END)
 
