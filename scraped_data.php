@@ -5,6 +5,7 @@ include_once 'simple_html_dom.php';
 include 'function.php';
 
 // xml task (START)
+
 $html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
 // print_r($html);
 function get_string_between($string, $start, $end){
@@ -17,13 +18,16 @@ function get_string_between($string, $start, $end){
 }
 // $get_element = get_string_between($html,'<!--','-->');
 $arr = explode('</info>', $html);
+print_r($arr);
 $get_element = get_string_between($arr[0],'<info','</info>');
 print_r($get_element);
 for( $i = 1; $i < strlen($arr); $i++ ){
-// 	$get_element = get_string_between($t,'<info','</info>');
 	print_r($arr[$i]);
 }
+
+
 // xml task (END)
+
 
 $url = $_GET['url'];
 $url = filter_url($url);  // filter URL
