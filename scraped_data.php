@@ -6,7 +6,17 @@ include 'function.php';
 
 // xml task (START)
 $html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
-print_r($html);
+print_r("Start",$html,"End");
+function get_string_between($string, $start, $end){
+    $string = ' ' . $string;
+    $ini = strpos($string, $start);
+    if ($ini == 0) return '';
+    $ini += strlen($start);
+    $len = strpos($string, $end, $ini) - $ini;
+    return substr($string, $ini, $len);
+}
+$get_element = get_string_between($html,'<!--','-->');
+print_r($get_element);
 // xml task (END)
 
 $url = $_GET['url'];
