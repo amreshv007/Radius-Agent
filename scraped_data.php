@@ -19,8 +19,9 @@ function get_string_between($string, $start, $end){
 $t = $html;
 for( $i = 0; $i < 5; $i++ ){
 	$get_element = get_string_between($t,'<info','</info>');
-// 	print_r($get_element);
+	print_r($get_element);
 	$r = explode('</info>', $t);
+	print_r($r[1]);
 	$t = $r[1];
 }
 // xml task (END)
