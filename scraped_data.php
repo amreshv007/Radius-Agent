@@ -32,7 +32,7 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 	$operator = $a[0];
 	$country = $a[1];
 	$mcc = get_string_between($temp,'mcc="','" mnc');
-	$mnc = get_string_between($temp,'mnc="','">');
+	$mnc = get_string_between($temp,'mnc="','"');
 	$volte = get_string_between($temp,'support_volte="','" support_vilte');
 	$vilte = get_string_between($temp,'support_vilte="','" support_vowifi');
 	$vowifi = get_string_between($temp,'support_vowifi="','" support_viwifi');
