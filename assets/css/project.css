@@ -37,11 +37,12 @@ b{
 /* Excel Test  */
 
 .t{
-	width: 90%;
+	width: fit-content;
     	background-color: snow;
-	border : 1px solid;
-	margin : 50px;
-	line-height: normal;
+    	border: 1px solid;
+    	line-height: normal;
+    	margin-left: 25%;
+    	margin-top: 50px;
 }
 .t tr, .t tr th, .t tr td {
 	border : 1px solid;
