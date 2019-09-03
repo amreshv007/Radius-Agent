@@ -40,8 +40,11 @@ b{
 	width: 100%;
     	background-color: snow;
 	border : 1px solid;
+	margin : 20px;
 }
-
+.t td, .t th {
+	padding : 10px;
+}
 /* Excel  Test End */
 
 
