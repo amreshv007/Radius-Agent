@@ -71,12 +71,12 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 <!-- 			<th>S. No.</th> -->
 			<th>Country</th>
 			<th>Operator</th>
-			<th>mcc</th>
-			<th>mnc</th>
-			<th>Volte</th>
-			<th>Vilte</th>
-			<th>Vowifi</th>
-			<th>Viwifi</th>
+			<th>MCC</th>
+			<th>MNC</th>
+			<th>VoLTE</th>
+			<th>ViLTE</th>
+			<th>VoWiFi</th>
+			<th>ViWiFi</th>
 		</tr>
 	</thead>
 	<tbody>
