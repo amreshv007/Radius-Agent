@@ -55,8 +55,8 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 ?>
 <table class="t">
 	<thead>
-		<tr class="t_head">
-			<th>S. No.</th>
+		<tr>
+<!-- 			<th>S. No.</th> -->
 			<th>Country</th>
 			<th>Operator</th>
 			<th>mcc</th>
@@ -69,8 +69,8 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 	</thead>
 	<tbody>
 		<?php for( $i=0; $i < sizeof($arr)-1; $i++){ ?>
-		<tr class="t_info">
-			<td><?php echo $i+1; ?></td>
+		<tr>
+<!-- 			<td><?php //echo $i+1; ?></td> -->
 			<?php for( $j=0; $j<8; $j++) { ?>
 			<td><?php echo $table[$i][$j]; ?></td>
 			<?php } ?>
