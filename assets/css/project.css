@@ -41,6 +41,7 @@ b{
     	background-color: snow;
 	border : 1px solid;
 	margin : 50px;
+	line-height: normal;
 }
 .t tr, .t tr th, .t tr td {
 	border : 1px solid;
