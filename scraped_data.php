@@ -84,7 +84,7 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 
 <!-- xml task (END) -->
 
-// <?php
+<?php
 $url = $_GET['url'];
 $url = filter_url($url);  // filter URL
 $open_issues = find_open_issues($url); // Calculate total open issues
