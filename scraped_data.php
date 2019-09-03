@@ -32,8 +32,8 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 	$last = sizeof($a);
 	$country = $a[$last-1];
 	$operator = $a[0];
-	for($i=1;$i<$last-1;$i++){
-			$operator = $operator." ".$a[$i];
+	for($j=1;$j<$last-1;$j++){
+			$operator = $operator." ".$a[$j];
 	}
 	$mcc = get_string_between($temp,'mcc="','" mnc');
 	$mnc = get_string_between($temp,'mnc="','"');
