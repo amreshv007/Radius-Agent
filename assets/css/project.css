@@ -42,6 +42,9 @@ b{
     	text-align: center;
     	border: 0.5px solid black;
 }
+.t > thead {
+	text-align-last: center;
+}
 
 /* Excel  Test End */
 
