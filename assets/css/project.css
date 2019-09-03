@@ -36,7 +36,7 @@ b{
 
 /* Excel Test  */
 
-.t,.t_head,t_info {
+.t,{
 	width: 100%;
     	background-color: snow;
     	text-align: center;
