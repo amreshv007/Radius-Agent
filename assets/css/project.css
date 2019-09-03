@@ -42,7 +42,7 @@ b{
 	border : 1px solid;
 	margin : 50px;
 }
-.t tr {
+.t tr, .t th, .t td {
 	border : 1px solid;
 }
 /* Excel  Test End */
