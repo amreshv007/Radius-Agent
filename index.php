@@ -1,5 +1,5 @@
 <?php include 'header.php'; ?>
-// xml task (START)
+<!--  xml task (START) -->
 <?php include 'simple_html_dom.php'; ?>
 <?php
 $html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
@@ -76,9 +76,7 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 </table>
 
 <!-- xml task (END) -->
-		
-		
-<h1 class="heading">Radius Agent</h1>
+
 <!-- Form input of GitHub public Repository URL -->
 <form name="form" action="scraped_data.php" method="GET" class="formclass">
 	<label class="form_heading">Enter GitHub Repository URL:</label>
