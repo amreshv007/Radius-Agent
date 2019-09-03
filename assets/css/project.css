@@ -39,11 +39,6 @@ b{
 .t{
 	width: 100%;
     	background-color: snow;
-    	text-align: center;
-    	border: 0.5px solid black;
-}
-.t thead {
-	text-align-last: center;
 }
 
 /* Excel  Test End */
