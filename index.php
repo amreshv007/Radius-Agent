@@ -66,7 +66,7 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 }
 ?>
 <table class="t">
-	<thead>
+<!-- 	<thead> -->
 		<tr>
 <!-- 			<th>S. No.</th> -->
 			<th>Country</th>
@@ -78,8 +78,8 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 			<th>VoWiFi</th>
 			<th>ViWiFi</th>
 		</tr>
-	</thead>
-	<tbody>
+<!-- 	</thead> -->
+<!-- 	<tbody> -->
 		<?php for( $i=0; $i < sizeof($arr)-1; $i++){ ?>
 		<tr>
 <!-- 			<td><?php //echo $i+1; ?></td> -->
@@ -88,7 +88,7 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 			<?php } ?>
 		</tr>      
 		<?php } ?>
-	</tbody>
+<!-- 	</tbody> -->
 </table>
 
 <!-- xml task (END) -->
