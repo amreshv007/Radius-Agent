@@ -43,6 +43,22 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 // 	$table[$i][1] = $a[0];
 	$table[$i][2] = $mcc;
 	$table[$i][3] = $mnc;
+	if($volte == 1)
+		$volte = 'O';
+	else
+		$volte = 'X';
+	if($vilte == 1)
+		$vilte = 'O';
+	else
+		$vilte = 'X';
+	if($vowifi == 1)
+		$vowifi = 'O';
+	else
+		$vowifi = 'X';
+	if($viwifi == 1)
+		$viwifi = 'O';
+	else
+		$viwifi = 'X';
 	$table[$i][4] = $volte;
 	$table[$i][5] = $vilte;
 	$table[$i][6] = $vowifi;
