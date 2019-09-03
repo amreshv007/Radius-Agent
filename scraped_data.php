@@ -29,25 +29,27 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 	// each row extraction
 	$operator_country = get_string_between($temp,'<!--','-->');
 	$a = explode(" ", $operator_country);
-	$last = sizeof($a)-1;
-	$country = $a[$last];
-	$operator = "";
-	for($i=0;$i<$last-1;$i++){
-		if($i <$last-2){
-			$operator = $operator.$a[$i]." ";		
-		}
-		else{
-			$operator = $operator.$a[$i];	
-		}
-	}
+// 	$last = sizeof($a)-1;
+// 	$country = $a[$last];
+// 	$operator = "";
+// 	for($i=0;$i<$last-1;$i++){
+// 		if($i <$last-2){
+// 			$operator = $operator.$a[$i]." ";		
+// 		}
+// 		else{
+// 			$operator = $operator.$a[$i];	
+// 		}
+// 	}
 	$mcc = get_string_between($temp,'mcc="','" mnc');
 	$mnc = get_string_between($temp,'mnc="','"');
 	$volte = get_string_between($temp,'support_volte="','" support_vilte');
 	$vilte = get_string_between($temp,'support_vilte="','" support_vowifi');
 	$vowifi = get_string_between($temp,'support_vowifi="','" support_viwifi');
 	$viwifi = get_string_between($temp,'support_viwifi="','" />');
-	$table[$i][0] = $country;
-	$table[$i][1] = $operator;
+// 	$table[$i][0] = $country;
+	$table[$i][0] = $a[1];
+// 	$table[$i][1] = $operator;
+	$table[$i][1] = $a[0];
 	$table[$i][2] = $mcc;
 	$table[$i][3] = $mnc;
 	$table[$i][4] = $volte;
