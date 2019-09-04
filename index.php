@@ -12,7 +12,7 @@
 	<?php
 				   print_r($_FILES['lg_xml']['tmp_name']);
 	$get_file = simplexml_load_file($_FILES['lg_xml']['tmp_name']);
-	print_r($get_file);
+// 	print_r($get_file);
 	$html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
 // 	$html = file_get_contents($get_file);
 	// print_r($html);
