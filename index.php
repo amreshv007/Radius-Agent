@@ -1,5 +1,6 @@
 <?php include 'header.php'; ?>
 <!--  xml task (START) -->
+<h1>Ice Bucket Challenge</h1>
 <?php include 'simple_html_dom.php'; ?>
 <?php
 $html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
@@ -116,7 +117,7 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 <!-- xml task (END) -->
 
 <!-- Form input of GitHub public Repository URL -->
-<form name="form" action="scraped_data.php" method="GET" class="formclass">
+<!-- <form name="form" action="scraped_data.php" method="GET" class="formclass">
 	<label class="form_heading">Enter GitHub Repository URL:</label>
 	<label>
 		<input type="text" name="url" class="git_url" placeholder="Enter Name" />
@@ -124,6 +125,6 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 	<label>
 		<input type="submit" name="submit" value="Submit" />
 	</label>
-</form>
+</form> -->
 <?php include 'footer.php'; ?>
 	
