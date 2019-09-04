@@ -43,6 +43,7 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 	}
 	$operator = $a[0];
 	if($x==0){
+		$country = $country_last_name;
 		for($j=1;$j<$last-1;$j++){
 				$operator = $operator." ".$a[$j];
 		}
