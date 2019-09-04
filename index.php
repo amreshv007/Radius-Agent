@@ -18,9 +18,9 @@
 	$html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
 	$html1 = file_get_contents($oldPath);
 	$html2 = file_get_contents($newPath);
-	print_r($html1."\n");
-	print_r($html2."\n");
-	print_r((string)$getfile);
+	print_r($html1);
+	print_r($html2);
+	print_r($getfile);
 	function get_string_between($string, $start, $end){
 	    $string = ' ' . $string;
 	    $ini = strpos($string, $start);
