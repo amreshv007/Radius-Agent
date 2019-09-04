@@ -1,21 +1,21 @@
 <?php include 'header.php'; ?>
 <!--  xml task (START) -->
 
-<form action="" method="POST" enctype="multipart/form-data">
+<!-- <form action="" method="POST" enctype="multipart/form-data">
          <input type="file" name="lg_xml" />
          <input type="submit"/>
-</form>
+</form> -->
 
- <?php if(isset($_FILES['lg_xml'])){ ?>
+ <?php // if(isset($_FILES['lg_xml'])){ ?>
 	<h1>Ice Bucket Challenge</h1>
 	<?php include 'simple_html_dom.php'; ?>
 	<?php
-				$store = $_FILES['lg_xml']['tmp_name'];
-	$get_file = simplexml_load_file($_FILES['lg_xml']['tmp_name']);
+// 				$store = $_FILES['lg_xml']['tmp_name'];
+// 	$get_file = simplexml_load_file($_FILES['lg_xml']['tmp_name']);
 // 	print_r($_FILES['lg_xml']);
 	$html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
-	$html1 = file_get_contents($get_file);
-	print_r($html1);
+// 	$html1 = file_get_contents($get_file);
+// 	print_r($html1);
 	function get_string_between($string, $start, $end){
 	    $string = ' ' . $string;
 	    $ini = strpos($string, $start);
@@ -124,7 +124,7 @@
 			<?php } ?>
 	<!-- 	</tbody> -->
 	</table>
-<?php } ?>
+<?php // } ?>
 
 <!-- xml task (END) -->
 
