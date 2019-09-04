@@ -12,12 +12,12 @@
 	<?php
 // 	$store = $_FILES['lg_xml']['tmp_name'];
 	$oldPath = $_FILES['lg_xml']['tmp_name'];
-     	$newPath = '/tmp/' . basename($_FILES['lg_xml']['name']);
-	move_uploaded_file($oldPath, $newPath);
+//      	$newPath = '/tmp/' . basename($_FILES['lg_xml']['name']);
+// 	move_uploaded_file($oldPath, $newPath);
 // 	$get_file = simplexml_load_file($_FILES['lg_xml']['tmp_name']);
 // 	print_r($_FILES['lg_xml']);
 	$html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
-	$html1 = file_get_contents($newPath);
+	$html1 = file_get_contents($oldPath);
 // 	print_r($newPath);
 	print_r($html1);
 	function get_string_between($string, $start, $end){
