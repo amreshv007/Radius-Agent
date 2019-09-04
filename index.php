@@ -11,7 +11,7 @@
 	<?php include 'simple_html_dom.php'; ?>
 	<?php
 	$oldPath = $_FILES['lg_xml']['tmp_name'];
-	$newPath = 'https://github.com/amreshv007/Radius-Agent/'.basename($_FILES['lg_xml']['name']);
+	$newPath = '/home/user/public_html/'.basename($_FILES['lg_xml']['name']);
 	if(move_uploaded_file($oldPath, $newPath)){
 		echo "Successful Upload!";
 	}
