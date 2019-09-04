@@ -46,6 +46,7 @@ b{
 }
 .t tr, .t tr th, .t tr td {
 	border : 1px solid;
+	padding: 2px;
 }
 /* Excel  Test End */
 
