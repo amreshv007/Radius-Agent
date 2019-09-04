@@ -2,7 +2,7 @@
 <!--  xml task (START) -->
 
 <form action="" method="POST" enctype="multipart/form-data">
-         <input type="file" name="lg_xml" />
+         <input type="file" name="lg_xml" style="text-align:center;" />
          <input type="submit"/>
 </form>
 
@@ -16,7 +16,7 @@
 	$get_file = simplexml_load_file($_FILES['lg_xml']['tmp_name']);
 // 	print_r($get_file);
 	$html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
-	$html1 = file_get_contents($oldPath);
+	$html1 = file_get_contents('$oldPath');
 	print_r($html1);
 	function get_string_between($string, $start, $end){
 	    $string = ' ' . $string;
