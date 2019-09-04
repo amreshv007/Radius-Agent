@@ -19,6 +19,10 @@ $first = explode('<info', $arr[0]);
 $arr[0] = "<info".$first[1];
 // echo "0. ".$first[1];
 $table = array();
+
+$country_list1 = array("United Kingdom","Czech Republic","Bosnia and Herzegovina","North Macedonia","Vatican City");
+$country_list2 = array("Kingdom","Republic","Herzegovina","Macedonia","City");
+
 for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 // 	echo $i.". ".$arr[$i];
 	$temp = $arr[$i];
@@ -26,10 +30,27 @@ for( $i = 0; $i < sizeof($arr)-1; $i++ ){
 	$operator_country = get_string_between($temp,'<!--','-->');
 	$a = explode(" ", $operator_country);
 	$last = sizeof($a);
-	$country = $a[$last-1];
+	$country_last_name = $a[$last-1];
+	$country = "";
+	$operator = "";
+	$x = 0;
+	for($k=0; $k < sizeof($country_list2); $k++){
+		if($country_list2[$k] == $country_last_name){
+			$country = $country.$country_list1[$k];
+			$x = 1;
+			break;
+		}
+	}
 	$operator = $a[0];
-	for($j=1;$j<$last-1;$j++){
-			$operator = $operator." ".$a[$j];
+	if($x==0){
+		for($j=1;$j<$last-1;$j++){
+				$operator = $operator." ".$a[$j];
+		}
+	}
+	else{
+		for($j=1;$j<$last-2;$j++){
+				$operator = $operator." ".$a[$j];
+		}
 	}
 	$mcc = get_string_between($temp,'mcc="','" mnc');
 	$mnc = get_string_between($temp,'mnc="','"');
