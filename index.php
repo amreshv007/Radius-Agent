@@ -1,25 +1,23 @@
 <?php include 'header.php'; ?>
 <!--  xml task (START) -->
 
-<!-- <form action="" method="POST" enctype="multipart/form-data">
+<form action="" method="POST" enctype="multipart/form-data">
          <input type="file" name="lg_xml" />
          <input type="submit"/>
-</form> -->
+</form>
 
- <?php //if(isset($_FILES['lg_xml'])){ ?>
+ <?php if(isset($_FILES['lg_xml'])){ ?>
 	<h1>Ice Bucket Challenge</h1>
 	<?php include 'simple_html_dom.php'; ?>
 	<?php
-// 	$store = $_FILES['lg_xml']['tmp_name'];
-// 	$oldPath = $_FILES['lg_xml']['tmp_name'];
-//      	$newPath = '/tmp/' . basename($_FILES['lg_xml']['name']);
-// 	move_uploaded_file($oldPath, $newPath);
-// 	$get_file = simplexml_load_file($_FILES['lg_xml']['tmp_name']);
-// 	print_r($_FILES['lg_xml']);
+	$oldPath = $_FILES['lg_xml']['tmp_name'];
+	$newPath = '/tmp/' . basename($_FILES['lg_xml']['name']);
+	move_uploaded_file($oldPath, $newPath);
+	$get_file = simplexml_load_file($_FILES['lg_xml']['tmp_name']);
+// 	print_r($get_file);
 	$html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
-// 	$html1 = file_get_contents($oldPath);
-// 	print_r($newPath);
-// 	print_r($html1);
+	$html1 = file_get_contents($oldPath);
+	print_r($html1);
 	function get_string_between($string, $start, $end){
 	    $string = ' ' . $string;
 	    $ini = strpos($string, $start);
@@ -28,19 +26,15 @@
 	    $len = strpos($string, $end, $ini) - $ini;
 	    return substr($string, $ini, $len);
 	}
-	// $get_element = get_string_between($html,'<!--','-->');
 	$arr = explode('</info>', $html);
-	// print_r($arr);
 	$first = explode('<info', $arr[0]);
 	$arr[0] = "<info".$first[1];
-	// echo "0. ".$first[1];
 	$table = array();
 
 	$country_list1 = array("United Kingdom","Czech Republic","Bosnia and Herzegovina","North Macedonia","Vatican City");
 	$country_list2 = array("Kingdom","Republic","Herzegovina","Macedonia","City");
 
 	for( $i = 0; $i < sizeof($arr)-1; $i++ ){
-	// 	echo $i.". ".$arr[$i];
 		$temp = $arr[$i];
 		// each row extraction
 		$operator_country = get_string_between($temp,'<!--','-->');
@@ -76,9 +70,7 @@
 		$vowifi = get_string_between($temp,'support_vowifi="','" support_viwifi');
 		$viwifi = get_string_between($temp,'support_viwifi="','" />');
 		$table[$i][0] = $country;
-	// 	$table[$i][0] = $a[1];
 		$table[$i][1] = $operator;
-	// 	$table[$i][1] = $a[0];
 		$table[$i][2] = $mcc;
 		$table[$i][3] = $mnc;
 		if($volte == 1)
@@ -104,9 +96,7 @@
 	}
 	?>
 	<table class="t">
-	<!-- 	<thead> -->
 			<tr>
-	<!-- 			<th>S. No.</th> -->
 				<th>Country</th>
 				<th>Operator</th>
 				<th>MCC</th>
@@ -116,19 +106,15 @@
 				<th>VoWiFi</th>
 				<th>ViWiFi</th>
 			</tr>
-	<!-- 	</thead> -->
-	<!-- 	<tbody> -->
 			<?php for( $i=0; $i < sizeof($arr)-1; $i++){ ?>
 			<tr>
-	<!-- 			<td><?php //echo $i+1; ?></td> -->
 				<?php for( $j=0; $j<8; $j++) { ?>
 				<td><?php echo $table[$i][$j]; ?></td>
 				<?php } ?>
 			</tr>      
 			<?php } ?>
-	<!-- 	</tbody> -->
 	</table>
-<?php //} ?>
+<?php } ?>
 
 <!-- xml task (END) -->
 
