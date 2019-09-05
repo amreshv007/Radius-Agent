@@ -1,9 +1,10 @@
 <?php include 'header.php'; ?>
 
 <!--  xml task (START) -->
-
-<form action="" method="POST" enctype="multipart/form-data">
-         <input type="file" name="lg_xml" style="text-align:center;" />
+<h1>Ice Bucket Challenge</h1>
+<form action="" method="POST" enctype="multipart/form-data" style="text-align:center;">
+	<div style="width:100%;"><b>Note: </b>Choose (.xml) file to convert its data into a table form.</div>
+         <input type="file" name="lg_xml" />
          <input type="submit"/>
 </form>
 
@@ -97,7 +98,7 @@
 		$table[$i][7] = $viwifi;
 	}
 	?>
-	<h1>Ice Bucket Challenge</h1>
+	<h2>Table Output</h2>
 	<table class="t">
 			<tr>
 				<th>Country</th>
