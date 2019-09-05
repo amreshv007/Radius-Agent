@@ -16,7 +16,7 @@
 		echo "Successful Upload!";
 	}
 	else{
-		echo "Upload Failed!";
+		//echo "Upload Failed!";
 	}
 // 	$get_file = simplexml_load_file($_FILES['lg_xml']['tmp_name']);
 // 	print_r($get_file);
