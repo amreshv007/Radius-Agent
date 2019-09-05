@@ -6,9 +6,9 @@
          <input type="submit"/>
 </form>
 
- <?php if(isset($_FILES['lg_xml'])){ ?>
-	<?php include 'simple_html_dom.php'; ?>
-	<?php
+ <?php if(isset($_FILES['lg_xml'])){
+	include 'simple_html_dom.php';
+	
 	$oldPath = $_FILES['lg_xml']['tmp_name'];
 	$newPath = ''.basename($_FILES['lg_xml']['name']);
 	if(move_uploaded_file($oldPath, $newPath)){
