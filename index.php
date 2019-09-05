@@ -7,16 +7,15 @@
 </form>
 
  <?php if(isset($_FILES['lg_xml'])){ ?>
-	<h1>Ice Bucket Challenge</h1>
 	<?php include 'simple_html_dom.php'; ?>
 	<?php
 	$oldPath = $_FILES['lg_xml']['tmp_name'];
 	$newPath = ''.basename($_FILES['lg_xml']['name']);
 	if(move_uploaded_file($oldPath, $newPath)){
-		echo "Successful Upload!";
+		echo "<span style="text-align:center;">Successful Upload!</span>";
 	}
 	else{
-		echo "Upload Failed!";
+		echo "<span style="text-align:center;">Upload Failed!</span>";
 	}
 // 	$html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
 	$html = file_get_contents($newPath);
@@ -98,6 +97,7 @@
 		$table[$i][7] = $viwifi;
 	}
 	?>
+	<h1>Ice Bucket Challenge</h1>
 	<table class="t">
 			<tr>
 				<th>Country</th>
