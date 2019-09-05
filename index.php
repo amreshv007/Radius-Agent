@@ -1,4 +1,5 @@
 <?php include 'header.php'; ?>
+
 <!--  xml task (START) -->
 
 <form action="" method="POST" enctype="multipart/form-data">
@@ -11,16 +12,15 @@
 	
 	$oldPath = $_FILES['lg_xml']['tmp_name'];
 	$newPath = ''.basename($_FILES['lg_xml']['name']);
-	if(move_uploaded_file($oldPath, $newPath)){
-		?> <span style="text-align:center;">Successful Upload!</span> <?php
+	if(move_uploaded_file($oldPath, $newPath)) {
+		echo "Uploaded Successfully!";
 	}
-	else{
-		?> <span style="text-align:center;">Upload Failed!</span> <?php
+	else {
+		echo "Upload Failed!";
 	}
 // 	$html = file_get_contents('vo_config_new-d89308866ba8a8ca4df94f4e6344d9d2.xml');
 	$html = file_get_contents($newPath);
-// 	print_r($html2);
-	function get_string_between($string, $start, $end){
+	function get_string_between($string, $start, $end) {
 	    $string = ' ' . $string;
 	    $ini = strpos($string, $start);
 	    if ($ini == 0) return '';
@@ -36,7 +36,7 @@
 	$country_list1 = array("United Kingdom","Czech Republic","Bosnia and Herzegovina","North Macedonia","Vatican City");
 	$country_list2 = array("Kingdom","Republic","Herzegovina","Macedonia","City");
 
-	for( $i = 0; $i < sizeof($arr)-1; $i++ ){
+	for( $i = 0; $i < sizeof($arr)-1; $i++ ) {
 		$temp = $arr[$i];
 		// each row extraction
 		$operator_country = get_string_between($temp,'<!--','-->');
@@ -54,14 +54,14 @@
 			}
 		}
 		$operator = $a[0];
-		if($x==0){
+		if($x==0) {
 			$country = $country_last_name;
-			for($j=1;$j<$last-1;$j++){
+			for($j=1;$j<$last-1;$j++) {
 					$operator = $operator." ".$a[$j];
 			}
 		}
-		else{
-			for($j=1;$j<$last-2;$j++){
+		else {
+			for($j=1;$j<$last-2;$j++) {
 					$operator = $operator." ".$a[$j];
 			}
 		}
@@ -121,15 +121,5 @@
 
 <!-- xml task (END) -->
 
-<!-- Form input of GitHub public Repository URL -->
-<!-- <form name="form" action="scraped_data.php" method="GET" class="formclass">
-	<label class="form_heading">Enter GitHub Repository URL:</label>
-	<label>
-		<input type="text" name="url" class="git_url" placeholder="Enter Name" />
-	</label>
-	<label>
-		<input type="submit" name="submit" value="Submit" />
-	</label>
-</form> -->
 <?php include 'footer.php'; ?>
 	
