@@ -1,6 +1,6 @@
 body{
 	font-size: 16px;
-	background-color: #f3e8e8;
+	background-color: #31708f;
 	font-family: roboto;
 }
 h1.heading{
@@ -52,6 +52,12 @@ b{
 }
 h1 {
 	text-align : center;
+}
+input[type=file] {
+    display: initial;
+}
+body{
+	background-color: #f3e8e8;
 }
 /* Excel  Test End */
 
