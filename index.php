@@ -24,7 +24,7 @@
 // 	$html1 = file_get_contents($oldPath);
 	$html2 = file_get_contents($newPath);
 // 	print_r($html1);
-// 	print_r($newPath);
+	print_r($html2);
 	function get_string_between($string, $start, $end){
 	    $string = ' ' . $string;
 	    $ini = strpos($string, $start);
