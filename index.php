@@ -4,5 +4,6 @@ $path = 'http://si-rd10-hr09:8080/HRIS/empinfo/myinfo.do?cat=attendanceinfo&acti
 // $p = 
 $html = file_get_contents($path);
 echo $html;
+echo "hello";
 // print()
 ?>
