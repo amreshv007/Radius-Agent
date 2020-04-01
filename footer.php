@@ -7,6 +7,10 @@
 				<p class="f">Computer Science and Engineering</p>
 				<p class="f">IIIT Jabalpur</p>
 				<p class="f">+91-8318852484</p>
+				<p>
+					<a href="https://github.com/amreshv007"><i class="fab fa-github"></i></a>
+					<a href="https://www.linkedin.com/in/amresh-k-7a3aba136/"><i class="fa">&#xf08c;</i></a>
+				</p>
 			</div>
 			
 		</div>
