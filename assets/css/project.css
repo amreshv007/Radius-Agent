@@ -36,7 +36,7 @@ b{
 
 /* Excel Test  */
 
-.t{
+/*.t{
 	width: fit-content;
     background-color: snow;
     border: 1px solid;
@@ -55,12 +55,12 @@ h1,h2 {
 }
 input[type=file] {
     display: initial;
-}
+}*/
 
 /* Excel  Test End */
 
 
-/* .foot{
+ .foot{
    left: 0;
    bottom: 0;
    width: 100%;
@@ -75,4 +75,4 @@ input[type=file] {
 	color: #f2dede;
 	margin-bottom: auto;
 	font-size: 16px;
-} */
+} 
