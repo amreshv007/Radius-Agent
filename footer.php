@@ -1,5 +1,5 @@
 		<div class="foot">
-			<div class="col-sm-2">
+			<div class="col-sm-2 image">
 				<img alt="" class="mypic" src="https://avatars0.githubusercontent.com/u/25303014?s=460&amp;v=4">
 			</div>
 			<div class="col-sm-10">
