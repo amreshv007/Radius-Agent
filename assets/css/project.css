@@ -81,3 +81,12 @@ input[type=file] {
 	width: auto;
     padding-right: 0px;
 }
+.github{
+	padding-right: 10px;
+	font-size: 24px;
+    color: white;
+}
+.linkedin{
+	font-size: 24px;
+    color: white;
+}
